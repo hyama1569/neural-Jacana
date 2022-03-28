@@ -1,5 +1,9 @@
 #!/bin/bash
 
+
+#requirements
+pip install transformers
+
 #download spanbert pretrained model
 cd ./spanbert_hf_base
 wget https://dl.fbaipublicfiles.com/fairseq/models/spanbert_hf_base.tar.gz
