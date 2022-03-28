@@ -221,7 +221,7 @@ class NeuralWordAligner(nn.Module):
 		super(NeuralWordAligner, self).__init__()
 		self.args = args
 		# self.bert = BertModel.from_pretrained('bert-base-uncased', output_hidden_states=True, output_attentions=True)
-		self.bert_model = BertModel.from_pretrained('/data/lan/neural-semi-crf/src/spanbert_hf_base/', output_hidden_states=True, output_attentions=True)
+		self.bert_model = BertModel.from_pretrained('./spanbert_hf_base', output_hidden_states=True, output_attentions=True)
 		self.attn_proj = nn.Linear(768, 100)
 		self.attn_embd = nn.Embedding(1, 100)
 		self.default_tag = -1
