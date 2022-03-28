@@ -2,7 +2,7 @@
 
 
 #requirements
-pip install transformers
+pip install transformers==3.0.2
 
 #download spanbert pretrained model
 cd ./spanbert_hf_base
