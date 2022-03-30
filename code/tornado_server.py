@@ -30,10 +30,10 @@ def convert_examples_to_features(data_examples, set_type, max_seq_length, tokeni
 			else:
 				example.text_a=' '.join(example.text_a.split()[:args.max_sent_length])
 				example.text_b=' '.join(example.text_b.split()[:args.max_sent_length])
-		inputs = tokenizer.encode_plus(example.text_a, example.text_b, add_special_tokens=True, max_length=max_seq_length)
+		inputs = tokenizer.encode_plus(example.text_a, example.text_b, add_special_tokens=True, max_length=max_seq_length, truncation=True)
 		input_ids_a_and_b, token_type_ids_a_and_b = inputs["input_ids"], inputs["token_type_ids"]
 		# print(inputs)
-		inputs = tokenizer.encode_plus(example.text_b, example.text_a, add_special_tokens=True, max_length=max_seq_length)
+		inputs = tokenizer.encode_plus(example.text_b, example.text_a, add_special_tokens=True, max_length=max_seq_length, truncation=True)
 		input_ids_b_and_a, token_type_ids_b_and_a = inputs["input_ids"], inputs["token_type_ids"]
 		# print(example)
 		# print(input_ids_a_and_b)
